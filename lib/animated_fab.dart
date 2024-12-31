@@ -118,21 +118,17 @@ class _AnimatedFabState extends State<AnimatedFab>
   }
 
   open() {
-    if (_animationController.isDismissed) {
-      _animationController.forward();
-    }
+    _animationController.forward();
   }
 
   close() {
-    if (_animationController.isCompleted) {
-      _animationController.reverse();
-    }
+    _animationController.reverse();
   }
 
   _onFabTap() {
     if (_animationController.isDismissed) {
       open();
-    } else {
+    } else if (_animationController.isCompleted) {
       close();
     }
   }
