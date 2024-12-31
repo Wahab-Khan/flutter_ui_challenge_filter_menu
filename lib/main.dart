@@ -58,11 +58,14 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildFab() {
     return new Positioned(
-        top: _imageHeight - 100.0,
-        right: -40.0,
+      top: _imageHeight - 100.0,
+      right: -40.0,
+      child: RepaintBoundary(
         child: new AnimatedFab(
           onClick: _changeFilterState,
-        ));
+        ),
+      ),
+    );
   }
 
   void _changeFilterState() {
