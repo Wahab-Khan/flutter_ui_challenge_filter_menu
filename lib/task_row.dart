@@ -6,7 +6,7 @@ class TaskRow extends StatelessWidget {
   final double dotSize = 12.0;
   final Animation<double> animation;
 
-  const TaskRow({Key key, this.task, this.animation}) : super(key: key);
+  const TaskRow({required this.task, required this.animation});
 
   @override
   Widget build(BuildContext context) {

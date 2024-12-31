@@ -7,6 +7,10 @@ class Task {
   final Color color;
   final bool completed;
 
-  Task({this.name, this.category, this.time, this.color, this.completed});
+  Task(
+      {required this.name,
+      required this.category,
+      required this.time,
+      required this.color,
+      required this.completed});
 }
-  

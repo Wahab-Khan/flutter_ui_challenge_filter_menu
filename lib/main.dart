@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
-  MainPage({Key key}) : super(key: key);
+  MainPage({super.key});
 
   @override
   _MainPageState createState() => new _MainPageState();
@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
   final GlobalKey<AnimatedListState> _listKey =
       new GlobalKey<AnimatedListState>();
   final double _imageHeight = 256.0;
-  ListModel listModel;
+  late ListModel listModel;
   bool showOnlyCompleted = false;
 
   @override

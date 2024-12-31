@@ -8,25 +8,23 @@ class ListModel {
   final GlobalKey<AnimatedListState> listKey;
   final List<Task> items;
 
-  AnimatedListState get _animatedList => listKey.currentState;
+  AnimatedListState? get _animatedList => listKey.currentState;
 
   void insert(int index, Task item) {
     items.insert(index, item);
-    _animatedList.insertItem(index, duration: new Duration(milliseconds: 150));
+    _animatedList?.insertItem(index, duration: new Duration(milliseconds: 150));
   }
 
   Task removeAt(int index) {
     final Task removedItem = items.removeAt(index);
-    if (removedItem != null) {
-      _animatedList.removeItem(
+    _animatedList?.removeItem(
         index,
         (context, animation) => new TaskRow(
               task: removedItem,
               animation: animation,
             ),
-        duration: new Duration(milliseconds: (150 + 200*(index/length)).toInt())
-      );
-    }
+        duration:
+            new Duration(milliseconds: (150 + 200 * (index / length)).toInt()));
     return removedItem;
   }
 
