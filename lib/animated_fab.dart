@@ -91,11 +91,13 @@ class _AnimatedFabState extends State<AnimatedFab>
   }
 
   Widget _buildExpandedBackground() {
-    double size =
-        hiddenSize + (expandedSize - hiddenSize) * _animationController.value;
+    // double size =
+    //     hiddenSize + (expandedSize - hiddenSize) * _animationController.value;
+    Animation size = Tween(begin: hiddenSize, end: expandedSize)
+        .animate(_animationController);
     return new Container(
-      height: size,
-      width: size,
+      height: size.value,
+      width: size.value,
       decoration: new BoxDecoration(shape: BoxShape.circle, color: Colors.pink),
     );
   }
